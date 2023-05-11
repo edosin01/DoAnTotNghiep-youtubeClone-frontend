@@ -212,7 +212,9 @@ const WatchVideo = () => {
       filledDislike={video && video.isDisliked}
     >
       <div className="video-container">
-        <div className="video">{!videoFetching && <Player />}</div>
+        <div className="video">
+          {!videoFetching && <Player isViewed={video?.isViewed} />}
+        </div>
 
         <div className="video-info">
           <h3>{video.title}</h3>

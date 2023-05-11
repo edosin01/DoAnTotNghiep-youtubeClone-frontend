@@ -8,7 +8,7 @@ export const getTrending = createAsyncThunk(
       `${process.env.REACT_APP_BACKEND_URL}/videos`
     );
     data.sort((a, b) => b.views - a.views);
-    return data;
+    return data?.length > 5 ? data?.slice(0, 5) : data;
   }
 );
 
